@@ -21,6 +21,7 @@ const Se7ti = {
       this.applyTranslations();
       this.renderSymptoms();
       this.renderFirstAid();
+      this.renderHotlines();
     });
   },
   applyTranslations() {

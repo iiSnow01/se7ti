@@ -54,10 +54,45 @@ const Se7tiI18n = {
       ar: "اللغة",
       fr: "Langue"
     },
+    skipToContent: {
+      dz: "Douz l mohtawa",
+      ar: "تخطي إلى المحتوى",
+      fr: "Aller au contenu"
+    },
     footerNote: {
       dz: "Ma7dour: hadchi ma kay3awdch choura tbia.",
       ar: "تنبيه: هذا المحتوى لا يعوض الاستشارة الطبية.",
       fr: "Note : ce contenu ne remplace pas un avis médical."
+    },
+    pageTitleHome: {
+      dz: "Se7ti.ma - L'accueil",
+      ar: "صحتي.ma - الرئيسية",
+      fr: "Se7ti.ma - Accueil"
+    },
+    pageTitleSymptoms: {
+      dz: "Se7ti.ma - A3rad",
+      ar: "صحتي.ma - الأعراض",
+      fr: "Se7ti.ma - Symptômes"
+    },
+    pageTitleOrientation: {
+      dz: "Se7ti.ma - Tawjih",
+      ar: "صحتي.ma - التوجيه",
+      fr: "Se7ti.ma - Orientation"
+    },
+    pageTitleFirstAid: {
+      dz: "Se7ti.ma - Awwal madir",
+      ar: "صحتي.ma - الإسعافات الأولية",
+      fr: "Se7ti.ma - Premiers gestes"
+    },
+    pageTitleUrgences: {
+      dz: "Se7ti.ma - Urgences",
+      ar: "صحتي.ma - الطوارئ",
+      fr: "Se7ti.ma - Urgences"
+    },
+    pageTitleFaq: {
+      dz: "Se7ti.ma - As2ila",
+      ar: "صحتي.ma - الأسئلة",
+      fr: "Se7ti.ma - FAQ"
     },
     orientationTitle: {
       dz: "Kifach t3ref fin tmchi",
