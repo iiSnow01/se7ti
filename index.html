@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Se7ti.ma - Accueil</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo" data-i18n="siteName">Se7ti.ma</div>
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="index.html" data-i18n="navHome">Accueil</a>
+          <a href="symptomes.html" data-i18n="navSymptoms">Symptômes</a>
+          <a href="orientation.html" data-i18n="navOrientation">Orientation</a>
+          <a href="premiers-gestes.html" data-i18n="navFirstAid">Premiers gestes</a>
+          <a href="urgences.html" data-i18n="navUrgences">Urgences</a>
+          <a href="faq.html" data-i18n="navFaq">FAQ</a>
+        </nav>
+        <div class="language-switcher">
+          <label for="language-select" class="muted" data-i18n="languageLabel">Langue</label>
+          <select id="language-select" aria-label="Sélecteur de langue">
+            <option value="dz">Darija</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero reveal">
+        <div>
+          <h1 data-i18n="siteName">Se7ti.ma</h1>
+          <p class="muted" data-i18n="tagline">Un guide santé dans nos langues.</p>
+          <div class="warning">
+            <strong data-i18n="warningTitle">Avertissement important</strong>
+            <p data-i18n="warningText">Ce site ne fait pas de diagnostic.</p>
+          </div>
+          <div class="cta-group">
+            <a class="button" href="symptomes.html" data-i18n="ctaSymptoms">Voir les symptômes</a>
+            <a class="button secondary" href="urgences.html" data-i18n="ctaUrgences">Quand aller aux urgences</a>
+          </div>
+        </div>
+        <div class="alert" role="alert" data-i18n="emergencyBanner">
+          🚨 Douleur intense, essoufflement ou perte de conscience : appelez le 141.
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <h2 data-i18n="orientationTitle">Comment savoir où aller</h2>
+        <p data-i18n="homeOrientationText">
+          Se7ti.ma propose des informations générales pour vous orienter.
+        </p>
+      </section>
+
+      <section class="section reveal">
+        <h2 data-i18n="firstAidTitle">Premiers gestes</h2>
+        <p data-i18n="homeFirstAidText">
+          Apprenez des gestes simples et sûrs. En cas de doute, contactez les urgences.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footerNote">Note : ce contenu ne remplace pas un avis médical.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/se7ti-pro.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

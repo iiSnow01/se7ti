@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Se7ti.ma - Orientation</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo" data-i18n="siteName">Se7ti.ma</div>
+        <nav class="nav-links" aria-label="Navigation principale">
+          <a href="index.html" data-i18n="navHome">Accueil</a>
+          <a href="symptomes.html" data-i18n="navSymptoms">Symptômes</a>
+          <a href="orientation.html" data-i18n="navOrientation">Orientation</a>
+          <a href="premiers-gestes.html" data-i18n="navFirstAid">Premiers gestes</a>
+          <a href="urgences.html" data-i18n="navUrgences">Urgences</a>
+          <a href="faq.html" data-i18n="navFaq">FAQ</a>
+        </nav>
+        <div class="language-switcher">
+          <label for="language-select" class="muted" data-i18n="languageLabel">Langue</label>
+          <select id="language-select" aria-label="Sélecteur de langue">
+            <option value="dz">Darija</option>
+            <option value="ar">العربية</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section reveal">
+        <h1 data-i18n="orientationTitle">Comment savoir où aller</h1>
+        <div class="warning">
+          <strong data-i18n="warningTitle">Avertissement important</strong>
+          <p data-i18n="warningText">Ce site ne fait pas de diagnostic.</p>
+        </div>
+        <p data-i18n="orientationIntro">
+          Cette page vous aide à vous orienter.
+        </p>
+      </section>
+
+      <section class="section reveal">
+        <h2 data-i18n="checklistTitle">Checklist rapide</h2>
+        <ul>
+          <li data-i18n="checklistItem1">Symptômes légers et stables : médecin généraliste ou centre de santé.</li>
+          <li data-i18n="checklistItem2">Symptômes modérés avec inquiétude : consultation rapide conseillée.</li>
+          <li data-i18n="checklistItem3">Signes d'alerte : urgences sans attendre.</li>
+        </ul>
+      </section>
+
+      <section class="section reveal">
+        <h2 data-i18n="hotlinesTitle">Numéros utiles</h2>
+        <div id="hotlines" class="hotline-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footerNote">Note : ce contenu ne remplace pas un avis médical.</p>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/se7ti-pro.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
