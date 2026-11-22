@@ -6,9 +6,7 @@ const Se7ti = {
     this.bindLanguageSwitcher();
     this.applyTranslations();
     this.initAnimations();
-    this.renderSymptoms();
-    this.renderFirstAid();
-    this.renderHotlines();
+    this.renderContent();
     this.bindSearch();
   },
   bindLanguageSwitcher() {
@@ -19,10 +17,15 @@ const Se7ti = {
       this.currentLang = event.target.value;
       setLanguage(this.currentLang);
       this.applyTranslations();
-      this.renderSymptoms();
-      this.renderFirstAid();
-      this.renderHotlines();
+      this.renderContent();
     });
+  },
+  renderContent() {
+    this.renderSymptoms();
+    this.renderFirstAid();
+    this.renderHotlines();
+    const search = document.querySelector("#symptom-search");
+    if (search) this.filterSymptoms(search.value);
   },
   applyTranslations() {
     const lang = this.currentLang;
@@ -36,9 +39,8 @@ const Se7ti = {
     });
   },
   initAnimations() {
-    document.body.classList.add("is-ready");
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) return;
+    if (prefersReduced || typeof IntersectionObserver !== "function") return;
     const revealItems = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver(
       (entries) => {
@@ -51,7 +53,15 @@ const Se7ti = {
       },
       { threshold: 0.2 }
     );
+    document.body.classList.add("animate-reveals");
     revealItems.forEach((item) => observer.observe(item));
+    document.addEventListener("focusin", (event) => {
+      const section = event.target.closest(".reveal");
+      if (section) {
+        section.classList.add("is-visible");
+        observer.unobserve(section);
+      }
+    });
   },
   renderSymptoms() {
     const list = document.querySelector("#symptoms-list");
@@ -60,7 +70,7 @@ const Se7ti = {
     list.innerHTML = "";
     Se7tiData.symptoms.forEach((symptom) => {
       const card = document.createElement("article");
-      card.className = "card reveal";
+      card.className = "card";
       card.dataset.severity = symptom.severity;
       card.innerHTML = `
         <div class="card-header">
@@ -109,7 +119,7 @@ const Se7ti = {
     container.innerHTML = "";
     Se7tiData.firstAid.forEach((item) => {
       const card = document.createElement("article");
-      card.className = "card reveal";
+      card.className = "card";
       card.innerHTML = `
         <h3>${item.title[lang]}</h3>
         <p>${item.steps[lang]}</p>
@@ -145,12 +155,12 @@ const Se7ti = {
   bindSearch() {
     const input = document.querySelector("#symptom-search");
     if (!input) return;
-    input.addEventListener("input", (event) => {
-      const query = event.target.value.toLowerCase();
-      document.querySelectorAll("#symptoms-list .card").forEach((card) => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? "" : "none";
-      });
+    input.addEventListener("input", (event) => this.filterSymptoms(event.target.value));
+  },
+  filterSymptoms(value) {
+    const query = value.trim().toLowerCase();
+    document.querySelectorAll("#symptoms-list .card").forEach((card) => {
+      card.hidden = !card.textContent.toLowerCase().includes(query);
     });
   }
 };
